@@ -26,10 +26,33 @@ namespace AspNet5API
         public void ConfigureServices(IServiceCollection services)
         {
 
+            //services.AddDbContext<ApplicationDbContext>(options =>
+            //    options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+
+            //services.AddDefaultIdentity<ApplicationUser>()
+            //    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            //services.AddIdentityServer()
+            //    .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
+
+            //services.AddAuthentication()
+            //    .AddIdentityServerJwt();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AspNet5API", Version = "v1" });
+            });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(
+                   name: "AllowOrigin",
+                   builder => {
+                       builder.AllowAnyOrigin()
+                      .AllowAnyMethod()
+                      .AllowAnyHeader();
+                   });
             });
         }
 
@@ -43,14 +66,19 @@ namespace AspNet5API
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AspNet5API v1"));
             }
 
+            //app.UseAuthentication();
+            //app.UseIdentityServer();
+
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseCors("AllowOrigin");
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }

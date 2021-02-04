@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {  HttpClientModule } from '@angular/common/http';
+import { ApiModule } from './api/api.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import {  HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     ClarityModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ApiModule.forRoot({ rootUrl: 'http://localhost:64133' }),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
