@@ -199,11 +199,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Progetti\\AspNet5WithAngular2\\AspNet5Angular2\\AspNet5API\\AspNet5API.csproj",
+      "projectUniqueName": "C:\\Progetti\\AspNet5WithAngular2\\AspNet5Angular2\\AspNet5API.csproj",
       "projectName": "AspNet5API",
-      "projectPath": "C:\\Progetti\\AspNet5WithAngular2\\AspNet5Angular2\\AspNet5API\\AspNet5API.csproj",
+      "projectPath": "C:\\Progetti\\AspNet5WithAngular2\\AspNet5Angular2\\AspNet5API.csproj",
       "packagesPath": "C:\\Users\\Henry\\.nuget\\packages\\",
-      "outputPath": "C:\\Progetti\\AspNet5WithAngular2\\AspNet5Angular2\\AspNet5API\\obj\\",
+      "outputPath": "C:\\Progetti\\AspNet5WithAngular2\\AspNet5Angular2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

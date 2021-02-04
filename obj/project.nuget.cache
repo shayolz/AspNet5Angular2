@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cE3cUsxNMBC8sjzk179WvoyVGDqufb5c+ssvyUKc9NLB6ALUCqvrem4MseZQBmGuWV2ezhbbS3NPdrEMgShh/w==",
+  "dgSpecHash": "QT2tniS91sLvn9OAsVuj3/G/KK/ZkPNqUgYxNOmH2XzW80PaSUbzMplr/aELkSV0/ZUgIqgYos2PMxtm+JZxAw==",
   "success": true,
-  "projectFilePath": "C:\\Progetti\\AspNet5WithAngular2\\AspNet5Angular2\\AspNet5API\\AspNet5API.csproj",
+  "projectFilePath": "C:\\Progetti\\AspNet5WithAngular2\\AspNet5Angular2\\AspNet5API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Henry\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Henry\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
