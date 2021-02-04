@@ -7,8 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "openapi": "node-modules/.bin/ng-openapi-gen --input http://localhost:64133/swagger/v1/swagger.json"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
