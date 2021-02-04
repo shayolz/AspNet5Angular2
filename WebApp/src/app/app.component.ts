@@ -8,5 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Angular2TestApp';
   collapsed:boolean = false;
-
 }

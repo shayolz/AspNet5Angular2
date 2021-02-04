@@ -1,18 +1,17 @@
 <div class="main-container">
   <header class="header header-6">
     <div class="branding">
-      <a href="javascript:void(0)">
+      <a href="javascript://" class="nav-link">
         <clr-icon shape="vm-bug"></clr-icon>
         <span class="title">Project Clarity</span>
       </a>
     </div>
-    <form class="search">
-      <label for="search-input-sidenav-ng">
-        <input id="search-input-sidenav-ng" type="text" placeholder="Search for keywords..." />
-      </label>
-    </form>
-    <div class="settings">
-      <a href="javascript://" class="nav-link nav-icon">
+    <div class="header-nav">
+      <a href="javascript://" class="active nav-link nav-text">Dashboard</a>
+      <a href="javascript://" class="nav-link nav-text">Interactive Analytics</a>
+    </div>
+    <div class="header-actions">
+      <a href="javascript://" class="nav-link nav-icon" aria-label="settings">
         <clr-icon shape="cog"></clr-icon>
       </a>
     </div>
@@ -20,14 +19,11 @@
 
   <div class="content-container">
     <div class="content-area">
-      <p>
-        Content Area
-      </p>
         <div id="techedgers">Techedgers</div>
 
     </div>
     <clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed">
-      <a clrVerticalNavLink routerLink="./normal" routerLinkActive="active">
+      <a clrVerticalNavLink routerLink="./" routerLinkActive="active">
         <clr-icon clrVerticalNavIcon shape="user"></clr-icon>
         Ghigo
       </a>
@@ -36,7 +32,7 @@
         Simo
       </a>
       <a clrVerticalNavLink routerLink="./poison" routerLinkActive="active">
-        <clr-icon clrVerticalNavIcon shape="sad-face"></clr-icon>
+        <clr-icon clrVerticalNavIcon shape="certificate"></clr-icon>
         Manu
       </a>
       <a clrVerticalNavLink routerLink="./grass" routerLinkActive="active">
@@ -46,10 +42,6 @@
       <a clrVerticalNavLink routerLink="./fighting" routerLinkActive="active">
         <clr-icon clrVerticalNavIcon shape="shield"></clr-icon>
         Fra
-      </a>
-      <a clrVerticalNavLink routerLink="./credit" routerLinkActive="active">
-        <clr-icon clrVerticalNavIcon shape="certificate"></clr-icon>
-        Credit
       </a>
     </clr-vertical-nav>
   </div>
