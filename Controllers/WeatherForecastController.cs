@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AspNet5Angular2.Controllers
+namespace AspNet5API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

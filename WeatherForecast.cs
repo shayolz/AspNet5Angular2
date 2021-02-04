@@ -1,6 +1,6 @@
 using System;
 
-namespace AspNet5Angular2
+namespace AspNet5API
 {
     public class WeatherForecast
     {
