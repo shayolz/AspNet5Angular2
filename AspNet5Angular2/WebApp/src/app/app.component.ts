@@ -15,20 +15,9 @@ export class AppComponent {
 
   }
   title = 'Angular2TestApp';
-  collapsed:boolean = false;
 
  ngOnInit(){
-    // this.testService.weatherForecastGet$Json().subscribe(response=> console.log("response",response));
-  
-    // this.http.get("http://localhost:5000/WeatherForecast", {
-    //   headers: new HttpHeaders({
-    //     "Content-Type": "application/json"
-    //   })
-    // }).subscribe(response => {
-    //   console.log("response",response)
-    // }, err => {
-    //   console.log(err)
-    // });
+
   }
 
   isUserAuthenticated() {

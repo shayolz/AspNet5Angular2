@@ -1,4 +1,6 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { WeatherForecastService } from 'src/app/api/services';
 
 @Component({
   selector: 'app-ghigo',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GhigoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient, private testService: WeatherForecastService) { }
 
+  public displayData:any = "loading...";
   ngOnInit(): void {
+  
+    this.http.get("http://localhost:5000/WeatherForecast", {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }).subscribe((response:any)=> {
+      this.displayData = [];
+
+      response.map((x:any)=> this.displayData.push(x.summary + x.temperatureC))
+    }, err => {
+      console.log(err)
+    });
   }
 
 }

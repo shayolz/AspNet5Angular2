@@ -13,6 +13,7 @@ import { LoginPageComponent } from './login/login-page/login-page.component';
 import { AuthGuard } from './AuthGard';
 import { FormsModule } from '@angular/forms';
 import { MainContainerComponent } from './home-page/main-container/main-container.component';
+import { CommonModule } from '@angular/common';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -30,6 +31,8 @@ export function tokenGetter() {
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule      ,
+    CommonModule ,
+    BrowserModule ,
     ApiModule.forRoot({ rootUrl: 'http://localhost:64133' }),
     RouterModule.forRoot([
       { path: '', component: AppComponent, canActivate: [AuthGuard] },
