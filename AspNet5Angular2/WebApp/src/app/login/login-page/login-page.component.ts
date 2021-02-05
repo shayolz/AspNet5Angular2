@@ -11,14 +11,19 @@ import { Router } from '@angular/router';
 export class LoginPageComponent implements OnInit {
 
   constructor(private http: HttpClient, private router: Router) { }
-
+  public form:any={
+    type:'',
+    email: null,
+    password: null
+  }
   invalidLogin:boolean = false;;
 
   ngOnInit(): void {
   }
 
-  login(form: NgForm) {
-    const credentials = JSON.stringify(form.value);
+  login() {
+console.log("form",this.form);
+    const credentials = JSON.stringify(this.form);
     this.http.post("http://localhost:5000/login", credentials, {
       headers: new HttpHeaders({
         "Content-Type": "application/json"

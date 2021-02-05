@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { FormsModule } from '@angular/forms';
 import { LoginRoutingModule } from './login.routing';
+import { ClarityModule } from '@clr/angular';
 
 
 
@@ -11,7 +12,9 @@ import { LoginRoutingModule } from './login.routing';
   imports: [
     CommonModule,
     FormsModule ,
-    LoginRoutingModule     
+    LoginRoutingModule  ,
+    ClarityModule
   ]
+
 })
 export class LoginModule { }

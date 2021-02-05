@@ -1,4 +1,4 @@
-<p>Pagina di login, autenticarsi con!</p>
+<!-- <p>Pagina di login, autenticarsi con!</p>
 <div>Email: prova</div>
 <div>Password: prova</div>
 
@@ -15,4 +15,32 @@
       <br/>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </div>
-  </form>
+  </form> -->
+
+  <div class="login-wrapper">
+    <form class="login" (ngSubmit)="login()">
+      <section class="title">
+        <h3 class="welcome">Welcome to</h3>
+        Ghigo Industry
+        <h5 class="hint">User email "prova" and password "prova" to login </h5>
+      </section>
+      <div class="login-group">
+        <clr-input-container>
+          <label class="clr-sr-only">Username</label>
+          <input type="text" name="email" clrInput placeholder="Email" [(ngModel)]="form.email" />
+        </clr-input-container>
+        <clr-password-container>
+          <label class="clr-sr-only">Password</label>
+          <input type="password" name="password" clrPassword placeholder="Password" [(ngModel)]="form.password" />
+        </clr-password-container>
+        <clr-checkbox-wrapper>
+          <label>Remember me</label>
+          <input type="checkbox" name="rememberMe" clrCheckbox [(ngModel)]="form.rememberMe" />
+        </clr-checkbox-wrapper>
+        <div *ngIf="this.invalidLogin" class="error active">
+          Invalid user name or password
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+    </form>
+  </div>

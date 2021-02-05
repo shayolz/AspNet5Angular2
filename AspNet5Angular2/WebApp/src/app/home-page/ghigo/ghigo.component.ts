@@ -10,7 +10,9 @@ import { WeatherForecastService } from 'src/app/api/services';
 export class GhigoComponent implements OnInit {
 
   constructor(private http: HttpClient, private testService: WeatherForecastService) { }
-
+public form:any={
+  type:''
+}
   public displayData:any = "loading...";
   ngOnInit(): void {
   
