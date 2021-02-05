@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -13,9 +14,12 @@ using static Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal.LoginMod
 
 namespace AspNet5API.Controllers
 {
+    [AllowAnonymous]
     [Route("[controller]")]
     public class LoginController : ControllerBase
     {
+
+        [AllowAnonymous]
         // GET api/values
         [HttpPost]
         public IActionResult Login([FromBody] InputModel user)
@@ -24,7 +28,7 @@ namespace AspNet5API.Controllers
             {
                 return BadRequest("Invalid client request");
             }
-            if (user.Email == "johndoe" && user.Password == "def@123")
+            if (user.Email == "prova" && user.Password == "prova")
             {
                 var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
                 var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);

@@ -67,13 +67,12 @@ namespace AspNet5API
 
             services.AddCors(options =>
             {
-                options.AddPolicy(
-                   name: "AllowOrigin",
-                   builder => {
-                       builder.AllowAnyOrigin()
-                      .AllowAnyMethod()
-                      .AllowAnyHeader();
-                   });
+                options.AddPolicy("EnableCORS", builder =>
+                {
+                    builder.AllowAnyOrigin()
+                       .AllowAnyHeader()
+                       .AllowAnyMethod();
+                });
             });
         }
 
@@ -93,8 +92,7 @@ namespace AspNet5API
             app.UseRouting();
 
             app.UseAuthorization();
-            app.UseCors("AllowOrigin");
-
+            app.UseCors("EnableCORS");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
