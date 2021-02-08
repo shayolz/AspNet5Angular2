@@ -1,7 +1,8 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { InputModel } from 'src/app/api/models';
+import { LoginService } from 'src/app/api/services';
 
 @Component({
   selector: 'app-login-page',
@@ -10,36 +11,32 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router) { }
-  public form:any={
-    type:'',
-    email: null,
-    password: null
+  constructor(private http: HttpClient, private router: Router, private testService: LoginService) { }
+  public form: InputModel = {
+    email: '',
+    password: '',
+    rememberMe: false
   }
-  invalidLogin:boolean = false;;
+  invalidLogin: boolean = false;;
 
   ngOnInit(): void {
   }
 
   login() {
-console.log("form",this.form);
-    const credentials = JSON.stringify(this.form);
-    this.http.post("http://localhost:5000/login", credentials, {
-      headers: new HttpHeaders({
-        "Content-Type": "application/json"
-      })
-    }).subscribe(response => {
-      const token = (<any>response).token;
+    this.testService.loginPost({ body: this.form }).subscribe(response => {
+
+      var parsedResponse = JSON.parse(<any>response);
+      const token = parsedResponse.token;
       localStorage.setItem("jwt", token);
       this.invalidLogin = false;
       this.router.navigate(["/"]);
-    }, err => {
+    }, errors => {
       this.invalidLogin = true;
+
     });
   }
 
   logOut() {
     localStorage.removeItem("jwt");
- }
-
+  }
 }

@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {  HttpClientModule } from '@angular/common/http';
+import {  HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiModule } from './api/api.module';
 import { JwtModule } from '@auth0/angular-jwt';
 import { RouterModule } from '@angular/router';
@@ -14,6 +14,7 @@ import { AuthGuard } from './AuthGard';
 import { FormsModule } from '@angular/forms';
 import { MainContainerComponent } from './home-page/main-container/main-container.component';
 import { CommonModule } from '@angular/common';
+import { httpInterceptor } from './interceptor/http-interceptor-token';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -33,7 +34,7 @@ export function tokenGetter() {
     FormsModule      ,
     CommonModule ,
     BrowserModule ,
-    ApiModule.forRoot({ rootUrl: 'http://localhost:64133' }),
+    ApiModule.forRoot({ rootUrl: 'http://localhost:5000' }),
     RouterModule.forRoot([
       { path: '', component: AppComponent, canActivate: [AuthGuard] },
       { path: 'login', component: LoginPageComponent },
@@ -46,8 +47,10 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [AuthGuard],
-
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: httpInterceptor, multi: true },
+    AuthGuard]
+,
   bootstrap: [AppComponent]
 })
 export class AppModule { }

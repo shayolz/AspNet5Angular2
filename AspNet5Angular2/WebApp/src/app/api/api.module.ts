@@ -4,6 +4,7 @@ import { NgModule, ModuleWithProviders, SkipSelf, Optional } from '@angular/core
 import { HttpClient } from '@angular/common/http';
 import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
+import { LoginService } from './services/login.service';
 import { WeatherForecastService } from './services/weather-forecast.service';
 
 /**
@@ -14,6 +15,7 @@ import { WeatherForecastService } from './services/weather-forecast.service';
   exports: [],
   declarations: [],
   providers: [
+    LoginService,
     WeatherForecastService,
     ApiConfiguration
   ],

@@ -10,23 +10,19 @@ import { WeatherForecastService } from 'src/app/api/services';
 export class GhigoComponent implements OnInit {
 
   constructor(private http: HttpClient, private testService: WeatherForecastService) { }
-public form:any={
-  type:''
-}
-  public displayData:any = "loading...";
-  ngOnInit(): void {
-  
-    this.http.get("http://localhost:5000/WeatherForecast", {
-      headers: new HttpHeaders({
-        "Content-Type": "application/json"
-      })
-    }).subscribe((response:any)=> {
-      this.displayData = [];
 
-      response.map((x:any)=> this.displayData.push(x.summary + x.temperatureC))
-    }, err => {
-      console.log(err)
+  public displayData: any = "loading...";
+  ngOnInit(): void {
+
+    var callback = this.testService.weatherForecastGet$Json().subscribe(response => {
+
+      setTimeout(   ()=>{
+        this.displayData = [];
+        response.map((x: any) => this.displayData.push(x.summary + x.temperatureC))
+      }
+        ,1000)
+    }, errors => {
+      console.log(errors)
     });
   }
-
 }
