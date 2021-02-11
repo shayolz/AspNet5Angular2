@@ -14,7 +14,7 @@ export class GhigoComponent implements OnInit {
   public displayData: any = "loading...";
   ngOnInit(): void {
 
-    var callback = this.testService.weatherForecastGet$Json().subscribe(response => {
+    this.testService.weatherForecastGet$Json().subscribe(response => {
 
       setTimeout(   ()=>{
         this.displayData = [];

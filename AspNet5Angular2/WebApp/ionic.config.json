@@ -1,0 +1,12 @@
+{
+  "defaultProject": "Angular2TestApp",
+  "projects": {
+    "Angular2TestApp": {
+      "name": "Angular2TestApp",
+      "integrations": {
+        "capacitor": {}
+      },
+      "type": "angular"
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GhigoComponent } from './ghigo.component';
@@ -8,7 +9,7 @@ describe('GhigoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GhigoComponent ]
+      declarations: [GhigoComponent, HttpClientModule ]
     })
     .compileComponents();
   });

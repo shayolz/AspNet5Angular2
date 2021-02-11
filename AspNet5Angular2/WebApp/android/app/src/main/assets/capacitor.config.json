@@ -1,0 +1,6 @@
+{
+  "appId": "com.example.app",
+  "appName": "angular2-test-app",
+  "webDir": "www",
+  "npmClient": "npm"
+}

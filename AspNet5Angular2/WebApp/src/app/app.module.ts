@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { MainContainerComponent } from './home-page/main-container/main-container.component';
 import { CommonModule } from '@angular/common';
 import { httpInterceptor } from './interceptor/http-interceptor-token';
+import { IonicModule } from '@ionic/angular';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -45,7 +46,8 @@ export function tokenGetter() {
         allowedDomains: ["localhost:5000"],
         disallowedRoutes: []
       }
-    })
+    }),
+    IonicModule.forRoot()
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: httpInterceptor, multi: true },
